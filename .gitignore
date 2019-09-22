@@ -13,3 +13,5 @@ pom.xml.asc
 maven-classpath
 maven-classpath.properties
 *.iml
+target/
+classes/

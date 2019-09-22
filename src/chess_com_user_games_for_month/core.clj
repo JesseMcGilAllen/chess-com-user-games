@@ -1,7 +1,11 @@
 (ns chess-com-user-games-for-month.core
-  (:gen-class))
+  (:gen-class)
+  (:require [chess-com-user-games-for-month.username :as un])
+  )
 
 (defn -main
   "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+  []
+  (def user (un/get-username))
+  ;; (println user)
+  (println (str "Hello " user "!")))
