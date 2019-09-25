@@ -1,13 +1,11 @@
 (ns chess-com-user-games-for-month.core
   (:gen-class)
   (:require [chess-com-user-games-for-month.username :as un]
-            [chess-com-user-games-for-month.http-client :as hc])
-  )
+            [chess-com-user-games-for-month.http-client :as hc]))
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "Gets the games played during the current month for the user name given"
   []
   (def user (un/get-username))
-  (println (hc/retrieve-games user)))
-  ;; (println user)
-  ;;(println (str "Hello " user "!")))
+  (spit (str  (System/getProperty "user.home") "/Documents/games_" user ".pgn")
+        (hc/retrieve-games user)))
